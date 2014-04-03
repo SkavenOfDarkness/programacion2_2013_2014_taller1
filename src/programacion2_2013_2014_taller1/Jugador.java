@@ -6,11 +6,13 @@
 
 package programacion2_2013_2014_taller1;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Lluis
  */
-public class Jugador {
+public class Jugador implements Serializable {
     private String nom;
     private TipusEquip equip;
     private int trofeus;
