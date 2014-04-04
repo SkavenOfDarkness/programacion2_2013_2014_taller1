@@ -52,12 +52,46 @@ public class Programacion2_2013_2014_taller1 {
                     fji.tancarJugadors();
                     break;
                 case 3:
+                    FitxerJugadorsIn estadistiques = new FitxerJugadorsIn("fitxers/jugadors.dat");
+                    System.out.print("Estadistiques dels jugadors:\n" + estadistiques.mostrarEstadistiques());
                     break;
                 case 4:
+                    FitxerJugadorsIn grups = new FitxerJugadorsIn("fitxers/jugadors.dat");
+                    FitxerJugadorsOut espases = new FitxerJugadorsOut("fitxers/espases.dat");
+                    FitxerJugadorsOut oros = new FitxerJugadorsOut("fitxers/oros.dat");
+                    FitxerJugadorsOut copes = new FitxerJugadorsOut("fitxers/copes.dat");
+                    FitxerJugadorsOut bastos = new FitxerJugadorsOut("fitxers/bastos.dat");
+                    grups.crearGrups(espases, oros, copes, bastos);
+                    System.out.print("Grups creats");
+                    espases.tancaJugadors();
+                    oros.tancaJugadors();
+                    copes.tancaJugadors();
+                    bastos.tancaJugadors();
+                    grups.tancarJugadors();
                     break;
                 case 5:
+                    FitxerJugadorsIn espasa = new FitxerJugadorsIn("fitxers/espases.dat");
+                    FitxerJugadorsIn oro = new FitxerJugadorsIn("fitxers/oros.dat");
+                    FitxerJugadorsIn cope = new FitxerJugadorsIn("fitxers/copes.dat");
+                    FitxerJugadorsIn basto = new FitxerJugadorsIn("fitxers/bastos.dat");
+                    System.out.print("Grup Espases\n" + espasa.mostrarJugardors());
+                    System.out.print("\nGrup Oros\n" + oro.mostrarJugardors());
+                    System.out.print("\nGrup Copes\n" + cope.mostrarJugardors());
+                    System.out.print("\nGrup Bastos\n" + basto.mostrarJugardors());
+                    espasa.tancarJugadors();
+                    oro.tancarJugadors();
+                    cope.tancarJugadors();
+                    basto.tancarJugadors();
                     break;
                 case 6:
+                    FitxerJugadorsIn estaEspases = new FitxerJugadorsIn("fitxers/espases.dat");
+                    System.out.print("Grup Espases\n" + estaEspases.mostrarEstadistiques());
+                    FitxerJugadorsIn estaOros = new FitxerJugadorsIn("fitxers/oros.dat");
+                    System.out.print("\nGrup Oros\n" + estaOros.mostrarEstadistiques());
+                    FitxerJugadorsIn estaCopes = new FitxerJugadorsIn("fitxers/copes.dat");
+                    System.out.print("\nGrup Copes\n" + estaCopes.mostrarEstadistiques());
+                    FitxerJugadorsIn estaBastos = new FitxerJugadorsIn("fitxers/bastos.dat");
+                    System.out.print("\nGrup Bastos\n" + estaBastos.mostrarEstadistiques());
                     break;
                 default:
                     sortir = true;
@@ -67,6 +101,7 @@ public class Programacion2_2013_2014_taller1 {
         }
     }
     
+    //Crea el menu
     private static void menu() {
         System.out.println("\n\nINFORMACIÓ DEL JOC");
         System.out.println("\n\t1. Inserir jugador");
@@ -78,6 +113,7 @@ public class Programacion2_2013_2014_taller1 {
         System.out.println("\t0. Sortir");
     }
     
+    //Permet llegir una cadena de caracters
     private static String llegirCadena(String msg) {
         String s = null;
         try {
@@ -92,6 +128,7 @@ public class Programacion2_2013_2014_taller1 {
 
     }
 
+    //Permet llegir un numero
     private static int llegirNum(String msg) {
         int x = 0;
         try {
@@ -110,6 +147,7 @@ public class Programacion2_2013_2014_taller1 {
         return x;
     }
     
+    //Permet llegir un equip
     private static TipusEquip llegirEquip(String msg) {
         TipusEquip equip = null;
         try {

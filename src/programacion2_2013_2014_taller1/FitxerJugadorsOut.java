@@ -41,8 +41,6 @@ public class FitxerJugadorsOut {
         }
     }
     
-    //Genera els fitxers de grups
-    
     //Tanca el fitxer i escriu el centinel·la.
     public void tancaJugadors() {
         try {
